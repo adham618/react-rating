@@ -18,7 +18,8 @@
     "build": "rollup -c",
     "version": "npm run build && git add -A lib",
     "postversion": "git push && git push --tags",
-    "gh-pages": "./scripts/gh-pages.sh"
+    "gh-pages": "./scripts/gh-pages.sh",
+    "preinstall": "npm install --package-lock-only --ignore-scripts && npx npm-force-resolutions"
   },
   "repository": {
     "type": "git",
@@ -69,5 +70,8 @@
   "dependencies": {
     "@types/lodash": "^4.14.105",
     "@types/react": "^16.0.40"
+  },
+  "resolutions": {
+    "@types/react": "^17.0.38"
   }
 }
